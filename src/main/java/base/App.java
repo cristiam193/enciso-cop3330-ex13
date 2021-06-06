@@ -1,5 +1,6 @@
 package base;
 import java.util.Scanner;
+import java.lang.Math;
 
 /*
 UCF COP3330 Summer 2021 Assignment 1 Solution
@@ -37,6 +38,17 @@ Implement this program as a GUI app that automatically updates the values when a
 
 public class App {
     public static void main(String[] args) {
-        
+        Scanner in = new Scanner(System.in);
+        System.out.print("What is the principal amount? ");
+        double principal = in.nextDouble();
+        System.out.print("What is the rate? ");
+        Double rate = in.nextDouble();
+        System.out.print("What is the number of years? ");
+        double years = in.nextDouble();
+        System.out.print("What is the number of times the interest is compounded per year? ");
+        double compound = in.nextDouble();
+        double compound_interest = principal *Math.pow((1 + (rate / 100) / compound),compound * years);
+        System.out.printf("$%.0f invested at %.1f%% for %d years compounded %d times per year is $%.2f.", principal, rate, (int)years, (int)compound, compound_interest);
+
     }
 }
